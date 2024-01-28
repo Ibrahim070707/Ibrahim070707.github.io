@@ -7,6 +7,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css');
 
 /*****---------------------------------------- 1) font-family: 'Rajdhani', sans-serif;
  2) font-family: 'Poppins', sans-serif;
@@ -368,41 +369,109 @@ ul.btn li:last-child {
 
 .header {
      width: 100%;
-     padding: 30px 30px;
+     padding: 0 30px;
      border-bottom: #c6cad5 solid 12px;
      background-color: #13110e;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 20px 0;
 }
 
-.logo {
-     position: relative;
-     padding-left: 50%;
-     padding-top: 6px;
+.mainlogo {
+     width: 250px;
 }
 
-.logo::after {
+.textHeader {
+     position: fixed;
+     right: 89%;
+     font-size: 13px;
+     top: 0;
+     width: 10%;
+     border-bottom-left-radius: 11px;
+     border-bottom-right-radius: 11px;
+     color: black;
+     background: white;
+     font-weight: bolder;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     z-index: 1000000000000000000000000000000000000000000000000000000000;
+     cursor: pointer;
+}
+
+/* .logo { */
+/* position: relative; */
+/* padding-left: 50%; */
+/* margin-bottom: 6px; */
+/* } */
+
+/* .logo::after {
      position: absolute;
      content: "";
      width: 136px;
      height: 110px;
      left: -45px;
      top: -30px;
-     background: url(../images/top_head.png);
+     background: url(../);
      background-repeat: no-repeat;
-     border-right: #c6cad5 solid 15px;
-}
-
+} */
 
 /** banner section **/
 
+
+.panel {
+     background-size: auto 100%;
+     background-position: center;
+     background-repeat: no-repeat;
+     height: 80vh;
+     border-radius: 50px;
+     color: #fff;
+     text-shadow: 0px 2px 4px #000;
+     cursor: pointer;
+     flex: 0.5;
+     margin: 10px;
+     position: relative;
+     transition: flex 0.7s ease-in;
+ }
+ 
+ .panel h3 {
+     font-size: 24px;
+     position: absolute;
+     bottom: 20px;
+     left: 20px;
+     margin: 0;
+     opacity: 0;
+ }
+ 
+ .panel.active {
+     flex: 5;
+ }
+ 
+ .panel.active h3 {
+     opacity: 1;
+     transition: opacity 1s ease-in 1s;
+ }
+ 
+ @media(max-width: 480px) {
+     .container {
+         width: 100vw;
+     }
+ 
+     .panel:nth-of-type(4),
+     .panel:nth-of-type(5) {
+         display: none;
+     }
+ }
+
 .banner_main {
-     background: url(../images/mainbanner.avif);
+     /* background: url();
      background-repeat: no-repeat;
      min-height: 840px;
      background-size: 100% 100%;
      display: flex;
      justify-content: center;
      align-content: center;
-     align-items: center;
+     align-items: center; 
+     object-fit: cover;*/
 }
 
 .text-bg {
@@ -495,6 +564,80 @@ ul.btn li:last-child {
      transition: ease-in all 0.5s;
 }
 
+
+
+.container.gallery-container {
+     background-color: #fff;
+     color: #35373a;
+     min-height: 100vh;
+     padding: 30px 50px;
+ }
+
+ .gallery-container h1 {
+     text-align: center;
+     font-family: 'Droid Sans', sans-serif;
+     font-weight: bold;
+ }
+
+ .gallery-container p.page-description {
+     text-align: center;
+     margin: 25px auto;
+     font-size: 18px;
+     color: #999;
+ }
+
+ /* .tz-gallery {
+     padding: 40px;
+ } */
+
+ /* Override bootstrap column paddings */
+ .tz-gallery .row>div {
+     padding: 2px;
+ }
+
+ .tz-gallery .lightbox img {
+     width: 100%;
+     border-radius: 0;
+     position: relative;
+ }
+
+ .tz-gallery .lightbox:before {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     margin-top: -13px;
+     margin-left: -13px;
+     opacity: 0;
+     color: #fff;
+     font-size: 26px;
+     font-family: 'Glyphicons Halflings';
+     content: '\e003';
+     pointer-events: none;
+     z-index: 9000;
+     transition: 0.4s;
+ }
+
+
+ .tz-gallery .lightbox:after {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     opacity: 0;
+     background-color: rgba(46, 132, 206, 0.7);
+     content: '';
+     transition: 0.4s;
+ }
+
+ .tz-gallery .lightbox:hover:after,
+ .tz-gallery .lightbox:hover:before {
+     opacity: 1;
+ }
+
+ .baguetteBox-button {
+     background-color: transparent !important;
+ }
 
 /** three_box section **/
 
